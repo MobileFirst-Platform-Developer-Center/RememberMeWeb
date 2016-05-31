@@ -19,7 +19,7 @@ define(['mfp'], function(WL) {
     
     function init() { 
         var isChallenged = false;
-        var userLoginChallengeHandler = WL.Client.createWLChallengeHandler(securityCheckName);
+        var userLoginChallengeHandler = WL.Client.createSecurityCheckChallengeHandler(securityCheckName);
 
         document.getElementById("login").addEventListener("click", login);
         document.getElementById("logout").addEventListener("click", logout);
@@ -37,7 +37,7 @@ define(['mfp'], function(WL) {
             document.getElementById("statusMsg").innerHTML = statusMsg;
         };
 
-        userLoginChallengeHandler.processSuccess = function(data) {
+        userLoginChallengeHandler.handleSuccess = function(data) {
             WL.Logger.debug("processSuccess");
             isChallenged = false;
             document.getElementById ("rememberMe").checked = false;
