@@ -38,7 +38,7 @@ define(['mfp'], function(WL) {
         };
 
         userLoginChallengeHandler.handleSuccess = function(data) {
-            WL.Logger.debug("processSuccess");
+            WL.Logger.debug("handleSuccess");
             isChallenged = false;
             document.getElementById ("rememberMe").checked = false;
             document.getElementById('username').value = "";
